@@ -1,0 +1,15 @@
+.header {
+  text-align: center;
+  margin: 3rem auto;
+  padding-inline: 2.5rem;
+  font-family: "Poppins", sans-serif;
+}
+.header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+.header p {
+  font-size: 1.25rem;
+  color: #666666;
+}

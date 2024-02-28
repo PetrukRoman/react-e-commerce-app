@@ -1,0 +1,163 @@
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 1.5rem 3rem;
+}
+
+.product-main {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  gap: 6.25rem;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.product-info {
+  flex: 1;
+}
+.product-title {
+  font-size: 2.6rem;
+  font-weight: 400;
+}
+.product-price {
+  font-size: 1.5rem;
+  color: #9f9f9f;
+  font-weight: 500;
+}
+.product-short-description {
+  font-size: 0.8rem;
+  font-family: 400;
+}
+.row {
+  display: flex;
+  width: 100%;
+  margin: 1rem 0rem;
+  align-items: center;
+  gap: 1.5rem;
+}
+.rating-container {
+  padding: 6px 12px 0.5rem 0rem;
+  border-right: 2px solid #9f9f9f;
+}
+.reviews-count {
+  font-size: 13px;
+}
+.button-group {
+  display: flex;
+  gap: 1rem;
+  padding: 2rem 0rem 4rem 0rem;
+  border-bottom: 1px solid #d9d9d9;
+}
+.button-group input {
+  font-size: 1.25rem;
+}
+.cta {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.product-main dl {
+  width: 100%;
+  margin: 3rem 0rem 4rem 0rem;
+
+  font-size: 0.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #9f9f9f;
+}
+.gallery {
+  flex: 1;
+  height: 40%;
+}
+.product-main dt {
+  width: 100px;
+  margin-bottom: 12px;
+  float: left;
+  clear: both;
+}
+
+.product-main dd {
+  margin-bottom: 12px;
+  display: flex;
+}
+.product-main dt:nth-last-child(2),
+.product-main dd:last-child {
+  margin: 0;
+}
+
+.product-main dd svg {
+  margin-right: 1rem;
+  text-align: center;
+  font-size: 1.25rem;
+}
+.product-main dd svg:last-child {
+  margin-right: 0;
+}
+
+.product-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #9f9f9f;
+  font-weight: 400;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 3rem 0rem;
+}
+.product-description p {
+  margin-bottom: 1.8rem;
+}
+
+.description-img-container {
+  display: flex;
+  width: 100%;
+}
+.description-img-container img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+}
+.related-products {
+  font-family: "Poppins", sans-serif;
+  margin: 3rem 0rem;
+  text-align: center;
+}
+
+.related-products h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.related-products button {
+  margin-top: 3rem;
+}
+
+.accordionWrapper {
+  display: none;
+}
+
+@media (max-width: 1056px) {
+  .button-group {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1024px) {
+  .product-main {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .product-main {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .gallery {
+    flex: 100%;
+  }
+  .accordionWrapper {
+    display: block;
+  }
+  .tabsWrapper {
+    display: none;
+  }
+}

@@ -1,0 +1,145 @@
+.card {
+  background-color: #f4f5f7;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  transition: all 0.2s ease-out;
+  /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4); */
+}
+.card a {
+  text-decoration: none;
+  color: #000;
+}
+.card-image {
+  position: relative;
+  height: 18rem;
+}
+
+.label {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background-color: #e97171;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+.new {
+  background-color: #2ec1ac;
+}
+.card-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.card-content {
+  padding: 1rem 1rem 2rem 1rem;
+  font-family: "Poppins", sans-serif;
+}
+.card-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3a3a3a;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.descriptions {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #898989;
+  height: 3rem;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.row {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 1.25rem;
+  color: #3a3a3a;
+  font-weight: 600;
+}
+.old-price {
+  font-size: 1rem;
+  color: #b0b0b0;
+  text-decoration: line-through;
+}
+
+.backdrop {
+  position: absolute;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  transition: all 0.2s ease-out;
+}
+
+.btn-add {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+
+  padding: 0.5rem 1.5rem;
+
+  border: none;
+  cursor: pointer;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #b88e2f;
+  transition: all 0.2s ease-out;
+}
+
+@media (hover: hover) {
+  .card:hover .backdrop,
+  .card:hover .btn-add {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .card-content {
+    padding-bottom: 1rem;
+  }
+  .btn-add {
+    position: static;
+    opacity: 1;
+    margin: 0rem 1rem 1rem 1rem;
+    border: 1px solid #b88e2f;
+    background-color: inherit;
+    transform: translate(0);
+  }
+}
+@media (max-width: 400px) {
+  .card-image {
+    height: 15rem;
+  }
+}

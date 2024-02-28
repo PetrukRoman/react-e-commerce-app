@@ -1,0 +1,105 @@
+.header {
+  position: relative;
+  width: 100%;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 0 auto;
+  max-width: 1300px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #000;
+}
+
+.logo img {
+  width: 2.5rem;
+  height: 1.5em;
+}
+.logo span {
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+}
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navigation ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.link a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: #000;
+}
+.link a:hover {
+  border-bottom: 3px solid #000;
+}
+
+.icons-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  font-size: 1.25rem;
+}
+.icons-nav button,
+.icons-nav a {
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #000;
+}
+.mobileBtn {
+  display: none;
+}
+.mobileBtn button,
+.mobileBtn a {
+  display: inline-block;
+  font-size: 2rem;
+  line-height: 0%;
+
+  color: #000;
+}
+.active {
+  border-bottom: 3px solid #000;
+}
+@media (max-width: 1024px) {
+  .navigation {
+    display: none;
+  }
+  .icons-nav {
+    display: none;
+  }
+  .mobileBtn {
+    display: inline-block;
+  }
+  .wrapper {
+    padding: 1.5rem 2.5rem;
+  }
+}

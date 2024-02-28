@@ -1,0 +1,32 @@
+.tabs {
+  width: 100%;
+}
+.tab-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  gap: 3.2rem;
+}
+.tab-btn {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #9f9f9f;
+  transition: border 0.2s ease-out;
+}
+.active {
+  color: #000;
+}
+.tab-btn:hover {
+  border-bottom: 2px solid #9f9f9f;
+}
+
+.tab-panel {
+  width: 100%;
+  padding: 0.5rem 0rem;
+}

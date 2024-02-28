@@ -1,0 +1,86 @@
+.section {
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 6.25rem 3rem 3rem 3rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8rem;
+}
+
+.row > div:first-child {
+  flex: 2 200px;
+}
+.row > div:last-child {
+  flex: 3 200px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.col input,
+.col select {
+  width: 100%;
+  padding: 1.25rem;
+  font-size: 1rem;
+  color: #282828;
+  font-weight: 400;
+}
+.line {
+  width: 100%;
+  flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+}
+.line p {
+  flex: 1 200px;
+}
+.grid {
+  display: grid;
+  font-size: 1rem;
+  font-weight: 400;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--text-gray-color);
+}
+
+.grid p:nth-child(even) {
+  text-align: right;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.product-name {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #9f9f9f;
+}
+.product-name span {
+  color: #000;
+}
+.price {
+  font-weight: 300;
+}
+.total {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #b88e2f;
+}
+@media (max-width: 1024px) {
+  .container {
+    padding: 2.5rem;
+  }
+  .row {
+    gap: 3rem;
+  }
+}

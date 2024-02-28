@@ -1,0 +1,66 @@
+.group {
+  display: block;
+}
+.group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+}
+.input {
+  display: inline-block;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem;
+}
+.input::placeholder {
+  font-size: 1rem;
+  font-weight: 300;
+}
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  display: none;
+}
+.number {
+  display: inline-block;
+  position: relative;
+  flex: 0;
+}
+.number input {
+  text-align: center;
+}
+.minus,
+.plus {
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 30px;
+
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  background-color: transparent;
+
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.minus {
+  left: 1px;
+}
+.plus {
+  right: 1px;
+}
+.textarea {
+  resize: none;
+  border: 1px solid #9f9f9f;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  padding: 1rem;
+}

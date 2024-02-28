@@ -1,0 +1,40 @@
+.mobileMenu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 50px;
+  left: 0;
+  right: 0;
+  height: calc(100svh - 50px);
+  overflow-y: auto;
+  background-color: #fff;
+  z-index: 100;
+}
+.content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  padding: 2rem 3rem;
+}
+.content ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.content li {
+  padding-bottom: 0.5rem;
+
+  border-bottom: 1px solid #9f9f9f9f;
+}
+.content ul a {
+  display: block;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  color: #000;
+  font-size: 2rem;
+}
+.open {
+  display: block;
+}

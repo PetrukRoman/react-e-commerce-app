@@ -1,0 +1,139 @@
+.footer {
+  border-top: 1px solid #d9d9d9;
+  padding: 3rem 6.25rem;
+}
+.content {
+  display: flex;
+  font-family: "Poppins", sans-serif;
+  justify-content: space-between;
+  padding-bottom: 3rem;
+  gap: 1.5rem;
+  border-bottom: 1px solid #d9d9d9;
+}
+.content h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.content p {
+  font-size: 1rem;
+  color: #9f9f9f;
+}
+.navigation {
+  flex-shrink: 0;
+}
+.navigation ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.navigation h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9f9f9f;
+  margin-bottom: 3rem;
+}
+.navigation a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.form label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9f9f9f;
+  margin-bottom: 2.5rem;
+}
+.form input {
+  border: none;
+  border-radius: 0;
+  font-family: "Poppins", sans-serif;
+  padding: 0.5rem 1rem 0.5rem 0rem;
+  background-color: transparent;
+  font-size: 0.875rem;
+  border-bottom: 2px solid #9f9f9f;
+  margin-right: 10px;
+}
+.form input::placeholder {
+  color: #9f9f9f;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.form input:focus {
+  outline: none;
+  border-bottom: 2px solid #000;
+}
+.form button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0.5rem 0rem;
+  border-bottom: 2px solid #000;
+
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  color: #000;
+}
+
+.copyright {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+
+  margin-top: 2rem;
+}
+@media (max-width: 1024px) {
+  .footer {
+    padding-inline: 2.5rem;
+  }
+}
+@media (max-width: 860px) {
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .content div:first-child {
+    order: 3;
+    width: 100%;
+    margin: 2rem 0rem;
+  }
+
+  .content h2 {
+    margin-bottom: 1rem;
+  }
+  .navigation {
+    order: 2;
+  }
+  .navigation ul {
+    font-size: 1.2rem;
+
+    gap: 2rem;
+  }
+  .form {
+    order: 1;
+  }
+  .form label {
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+  }
+  .form input {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 420px) {
+  .navigation h3 {
+    margin-bottom: 1.5rem;
+  }
+  .form {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .form label {
+    margin-bottom: 1.5rem;
+  }
+}

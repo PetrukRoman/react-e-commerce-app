@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0rem 2rem;
+}
+.row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
+}
+.card {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+.card figure {
+  border-radius: 10px;
+  overflow: hidden;
+  height: 30rem;
+  margin-bottom: 1.2rem;
+}
+.card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+.card p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding-inline: 2.5rem;
+  }
+}
