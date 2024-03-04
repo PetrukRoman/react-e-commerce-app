@@ -1,5 +1,4 @@
 import { useMatches } from "react-router-dom";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import classes from "./BreadCrumbs.module.css";
 import bannerImg from "../../../assets/breadcrumb.jpg";
 const BreadCrumbs = ({ tiny }) => {
@@ -28,7 +27,7 @@ const BreadCrumbs = ({ tiny }) => {
 
   return (
     <div className={classes["breadcrumb-banner"]}>
-      <LazyLoadImage src={bannerImg} alt="big-banner" height="100%" width="100%" />
+      <img src={bannerImg} alt="big-banner" />
       <nav aria-label="Дополнительная" className={classes.navigation}>
         <h2>{title}</h2>
         <ol className={classes["justify-center"]}>

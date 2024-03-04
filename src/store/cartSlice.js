@@ -28,26 +28,25 @@ export const cartSlice = createSlice({
       }
 
       state.subTotal = state.items.reduce((acc, curr) => {
-        return (acc += curr.price * curr.quantity);
+        return (acc += curr.currentPrice * curr.quantity);
       }, 0);
     },
     removeFromCart: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload);
 
       state.subTotal = state.items.reduce((acc, curr) => {
-        return (acc += curr.price * curr.quantity);
+        return (acc += curr.currentPrice * curr.quantity);
       }, 0);
     },
     changeQuantity: (state, action) => {
       const currentItemId = action.payload.id;
-
       const userQuantity = action.payload.quantity;
 
-      const searchIndex = state.items.findIndex((item) => (item.id = currentItemId));
+      const searchIndex = state.items.findIndex((item) => item.id === currentItemId);
 
       state.items[searchIndex].quantity = userQuantity;
       state.subTotal = state.items.reduce((acc, curr) => {
-        return (acc += curr.price * curr.quantity);
+        return (acc += curr.currentPrice * curr.quantity);
       }, 0);
     },
   },

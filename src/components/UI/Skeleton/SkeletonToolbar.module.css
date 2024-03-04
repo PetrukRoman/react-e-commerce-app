@@ -1,0 +1,19 @@
+.skeleton {
+  width: 100%;
+  height: 5.8rem;
+  margin-bottom: 3rem;
+
+  background: linear-gradient(to right, #faf4ed 8%, #f8f3ed 18%, #f9f1e7 33%);
+  background-size: 1500px 100px;
+
+  animation: skeleton-animation 3s infinite ease-out;
+}
+
+@keyframes skeleton-animation {
+  0% {
+    background-position: -1500px 0;
+  }
+  100% {
+    background-position: 1500px 0;
+  }
+}

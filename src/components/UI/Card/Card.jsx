@@ -1,40 +1,35 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { addToCart } from "../../../store/cartSlice";
 import { currencyFormatter } from "../../../util/currencyFormat";
-import ChairImg from "../../../assets/chair.png";
 import classes from "./Card.module.css";
 
 const Card = ({ item }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  let isNew = false;
-
-  if (item?.label && item.label.includes("New")) {
-    isNew = true;
-  }
   const handleAddTocart = () => {
     return dispatch(addToCart(item));
   };
+
   return (
     <article className={classes.card}>
-      <Link to={`/shop/${item.id}`}>
-        <div className={classes["card-image"]}>
-          {item.label && <div className={isNew ? `${classes.label} ${classes.new}` : classes.label}>{item.label}</div>}
-          <img src={ChairImg} alt={item.title} />
-        </div>
+      <div className={classes["card-image"]}>
+        {item.isNew === 1 && <div className={`${classes.label} ${classes.new}`}>New</div>}
+        {item.discount && <div className={classes.label}>{item.discount}</div>}
+        <LazyLoadImage src={`http://localhost:3000/${item.imageUrl}`} alt={item.title} width="100%" height="100%" />
+      </div>
 
-        <div className={classes["card-content"]}>
-          <h3>{item.title}</h3>
-          <p className={classes.descriptions}>{item.descriptions}</p>
-          <div className={classes.row}>
-            <span className={classes.price}> {currencyFormatter(item.price)}</span>
-            {item?.oldPrice && <span className={classes["old-price"]}>{currencyFormatter(item.oldPrice)}</span>}
-          </div>
+      <div className={classes["card-content"]}>
+        <h3>{item.title}</h3>
+        <p className={classes.descriptions}>{item.description}</p>
+        <div className={classes.row}>
+          <span className={classes.price}> {currencyFormatter(+item.currentPrice)}</span>
+          {item.prevPrice && <span className={classes["old-price"]}>{currencyFormatter(+item.prevPrice)}</span>}
         </div>
-        <div className={classes.backdrop} />
-      </Link>
+      </div>
+      <div className={classes.backdrop} onClick={() => navigate(`/shop/${item.slug}`)} />
 
       <button className={classes["btn-add"]} onClick={handleAddTocart}>
         Add to cart

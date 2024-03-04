@@ -1,9 +1,11 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider, createBrowserRouter, Link } from "react-router-dom";
 import Root from "./pages/Root/Root";
 import HomePage from "./pages/HomePage/HomePage";
 import Shop from "./pages/Shop/Shop";
 import ProductPage from "./pages/ProductPage/ProductPage";
 import { loader as getProductInfo } from "./pages/ProductPage/ProductPage";
+
 import CartPage from "./pages/CartPage/CartPage";
 import CheckOutPage from "./pages/CheckoutPage/CheckoutPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
@@ -31,11 +33,12 @@ function App() {
           path: "shop",
           handle: {
             crumb: () => (
-              <span to="/shop" title="Shop">
+              <Link to="/shop" title="Shop">
                 Shop
-              </span>
+              </Link>
             ),
           },
+
           children: [
             {
               index: true,
@@ -77,7 +80,12 @@ function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient}>
+      <RouterProvider router={router} />
+    </QueryClientProvider>
+  );
 }
 
 export default App;

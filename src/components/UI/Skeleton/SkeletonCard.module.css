@@ -1,0 +1,42 @@
+.image,
+.heading,
+.text,
+.text2,
+.textBig {
+  animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.image {
+  width: 100%;
+  height: 18rem;
+}
+.content {
+  padding: 1rem 1rem 2rem 1rem;
+}
+.heading {
+  height: 1.5rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.text {
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+.text2 {
+  width: 80%;
+  height: 1rem;
+  margin-bottom: 1rem;
+}
+.textBig {
+  width: 100%;
+  height: 1.5rem;
+}
+@keyframes skeleton-loading {
+  0% {
+    background-color: #d3d3d3;
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}

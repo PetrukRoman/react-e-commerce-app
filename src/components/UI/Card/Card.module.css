@@ -12,6 +12,7 @@
   text-decoration: none;
   color: #000;
 }
+
 .card-image {
   position: relative;
   height: 18rem;
@@ -100,6 +101,8 @@
 
 .btn-add {
   opacity: 0;
+  width: 80%;
+
   position: absolute;
   top: 50%;
   left: 50%;
@@ -117,7 +120,13 @@
   color: #b88e2f;
   transition: all 0.2s ease-out;
 }
-
+.btn-add:hover {
+  background-color: #b88e2f;
+  color: #fff;
+}
+.btn-add:active {
+  background-color: #5b4202;
+}
 @media (hover: hover) {
   .card:hover .backdrop,
   .card:hover .btn-add {

@@ -1,32 +1,45 @@
 import { useMemo } from "react";
 import classes from "./Pagination.module.css";
 
-const Pagination = ({ itemsPerPage, length, currentPage, setCurrentPage, siblingCount }) => {
+const Pagination = ({ productsCount, page, itemsPerPage, handleSetViewSetting, siblingCount }) => {
   const viewSiblingCount = siblingCount * 2 + 1;
+
   const paginationNumbers = useMemo(() => {
     let array = [];
-    console.log(Math.ceil(length / itemsPerPage));
-    for (let index = 1; index <= Math.ceil(length / itemsPerPage); index++) {
+    for (let index = 0; index < Math.ceil(productsCount / itemsPerPage); index++) {
       array.push(index);
     }
 
     return array;
-  }, [itemsPerPage, length]);
+  }, [itemsPerPage, productsCount]);
+
+  if (itemsPerPage >= productsCount) return;
 
   const handlePrev = () => {
-    setCurrentPage((prevState) => (prevState !== 1 ? prevState - 1 : prevState));
+    let currentPage;
+    if (page === 0) {
+      currentPage = page;
+    } else {
+      currentPage = paginationNumbers.length - 1;
+    }
+    handleSetViewSetting(currentPage, "currentPage");
   };
+
   const handleNext = () => {
-    setCurrentPage((prevState) => (prevState !== paginationNumbers.length ? prevState + 1 : prevState));
+    let currentPage;
+    if (page === paginationNumbers.length - 1) {
+      currentPage = paginationNumbers.length - 1;
+    } else {
+      currentPage = page + 1;
+    }
+    handleSetViewSetting(currentPage, "currentPage");
   };
 
-  if (paginationNumbers.length === 1) return;
-
-  let viewPaginationNumbers = [];
+  let viewPaginationNumbers = paginationNumbers;
 
   if (paginationNumbers.length > viewSiblingCount) {
-    if (currentPage >= viewSiblingCount) {
-      viewPaginationNumbers = paginationNumbers.slice(currentPage - (siblingCount + 1), currentPage + siblingCount);
+    if (page >= viewSiblingCount) {
+      viewPaginationNumbers = paginationNumbers.slice(page - (siblingCount + 1), page + siblingCount);
     } else {
       viewPaginationNumbers = paginationNumbers.slice(0, viewSiblingCount);
     }
@@ -34,7 +47,7 @@ const Pagination = ({ itemsPerPage, length, currentPage, setCurrentPage, sibling
   return (
     <div className={classes.pagination}>
       <ul>
-        {paginationNumbers.length > viewSiblingCount && currentPage !== 1 && (
+        {paginationNumbers.length > viewSiblingCount && page !== 1 && (
           <li>
             <button onClick={handlePrev} className={classes.button}>
               Prev
@@ -45,18 +58,16 @@ const Pagination = ({ itemsPerPage, length, currentPage, setCurrentPage, sibling
         {viewPaginationNumbers.map((indexPage) => (
           <li key={indexPage}>
             <button
-              onClick={() => setCurrentPage(indexPage)}
+              onClick={() => handleSetViewSetting(indexPage, "currentPage")}
               className={
-                currentPage === indexPage
-                  ? ` ${classes.active} ${classes.button} ${classes["btn-width"]}`
-                  : `${classes.button} ${classes["btn-width"]}`
+                page === indexPage ? ` ${classes.active} ${classes.button} ${classes["btn-width"]}` : `${classes.button} ${classes["btn-width"]}`
               }
             >
-              {indexPage}
+              {indexPage + 1}
             </button>
           </li>
         ))}
-        {paginationNumbers.length > viewSiblingCount && currentPage !== paginationNumbers.length && (
+        {paginationNumbers.length > viewSiblingCount && page !== paginationNumbers.length && (
           <li>
             <button onClick={handleNext} className={classes.button}>
               Next

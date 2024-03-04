@@ -17,9 +17,9 @@ const CartPage = () => {
 
   const handleChangeQuantity = (event, id) => {
     event.preventDefault();
-
+    console.log(id);
     const formData = new FormData(event.target);
-    const quantity = +formData.get("quantity");
+    const quantity = +formData.get(`quantity-${id}`);
 
     return dispath(changeQuantity({ id, quantity }));
   };
@@ -49,16 +49,24 @@ const CartPage = () => {
                 {items.map((item) => (
                   <tr key={item.id}>
                     <td>
-                      <img src={item.image} alt={item.title} />
+                      <img src={`http://localhost:3000/${item.imageUrl}`} alt={item.title} />
                     </td>
                     <td>{item.title}</td>
-                    <td>{currencyFormatter(item.price)}</td>
+                    <td>{currencyFormatter(+item.currentPrice)}</td>
                     <td>
                       <form onSubmit={(event) => handleChangeQuantity(event, item.id)}>
-                        <Input id="quantity" name="quantity" type="number" min={1} max={10} defaultValue={item.quantity} readOnly />
+                        <Input
+                          id={`quantity-${item.id}`}
+                          name={`quantity-${item.id}`}
+                          type="number"
+                          min={1}
+                          max={10}
+                          defaultValue={item.quantity}
+                          readOnly
+                        />
                       </form>
                     </td>
-                    <td>{currencyFormatter(item.price * item.quantity)}</td>
+                    <td>{currencyFormatter(item.currentPrice * item.quantity)}</td>
                     <td>
                       <ButtonIcon onClick={() => handleRemoveFromCart(item.id)}>
                         <AiFillDelete />

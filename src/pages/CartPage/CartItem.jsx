@@ -7,11 +7,11 @@ const CartItem = ({ item, handleRemoveFromCart, handleChangeQuantity }) => {
   return (
     <article className={classes.product}>
       <div className={classes.imgContainer}>
-        <img src={item.image} alt={item.title} />
+        <img src={`http://localhost:3000/${item.imageUrl}`} alt={item.title} />
       </div>
       <div className={classes.summary}>
         <div>
-          <span>{currencyFormatter(item.price)}</span>
+          <span>{currencyFormatter(+item.currentPrice)}</span>
           <p className={classes.title}>{item.title}</p>
         </div>
 

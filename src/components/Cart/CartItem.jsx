@@ -11,13 +11,13 @@ const CartItem = ({ item }) => {
   return (
     <article className={classes["cart-item"]}>
       <div className={classes["img-container"]}>
-        <img src={item.image} alt={item.title} />
+        <img src={`http://localhost:3000/${item.imageUrl}`} alt={item.title} />
       </div>
 
       <div>
         <h3>{item.title}</h3>
         <p>
-          <strong> {item.quantity} </strong> X <span>{currencyFormatter(item.price)}</span>
+          <strong> {item.quantity} </strong> X <span>{currencyFormatter(+item.currentPrice)}</span>
         </p>
       </div>
       <ButtonIcon onClick={() => dispatch(removeFromCart(item.id))}>
